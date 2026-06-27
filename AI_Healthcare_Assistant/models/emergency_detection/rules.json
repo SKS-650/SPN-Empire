@@ -1,0 +1,23 @@
+{
+  "critical_keywords": [
+    "chest pain", "heart attack", "difficulty breathing", "severe bleeding", 
+    "unconscious", "stroke", "paralysis", "poison", "choking"
+  ],
+  "severity_levels": {
+    "CRITICAL": {
+      "level": 3,
+      "action": "Dispatching immediate emergency alerts. Please call local emergency services (e.g., 911 / 102) immediately.",
+      "color": "red"
+    },
+    "URGENT": {
+      "level": 2,
+      "action": "Highly advised to visit the nearest urgent care clinic or consult a doctor immediately.",
+      "color": "orange"
+    },
+    "ROUTINE": {
+      "level": 1,
+      "action": "Symptoms do not appear immediately life-threatening. Scheduling a standard consultation route.",
+      "color": "green"
+    }
+  }
+}
