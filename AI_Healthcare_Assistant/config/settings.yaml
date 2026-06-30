@@ -1,0 +1,38 @@
+app_name: Hamro Swasthya AI
+version: 1.0.0
+description: AI Healthcare Assistant for Rural Nepal
+
+server:
+  backend_host: "0.0.0.0"
+  backend_port: 8000
+  frontend_port: 8501
+
+database:
+  type: sqlite
+  path: app/database/healthcare.db
+
+models:
+  disease_prediction:
+    path: models/disease_prediction/random_forest.pkl
+    encoder: models/disease_prediction/label_encoder.pkl
+  skin_detection:
+    path: models/skin_detection/mobilenet_skin.pt
+    classes: models/skin_detection/classes.txt
+    architecture: mobilenet_v3_large
+    input_size: 224
+  emergency:
+    rules: models/emergency_detection/rules.json
+    model: models/emergency_detection/emergency_model.pkl
+
+voice:
+  whisper_model_size: base
+  stt_language_primary: ne-NP
+  stt_language_fallback: en-US
+  tts_language: ne
+
+features:
+  offline_mode: false
+  enable_whisper: true
+  enable_google_stt: true
+  enable_gtts: true
+  nepali_translation: true
